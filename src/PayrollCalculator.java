@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class PayrollCalculator {
-    public static void main(String[] args) {
+    static void main(String[] ignoredArgs) {
     Scanner scan = new Scanner(System.in); // add scanner
 
     System.out.print ("Enter Name: "); //prompt for name entry
