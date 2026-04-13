@@ -13,11 +13,16 @@ public class PayrollCalculator {
     System.out.print ("Enter pay rate: "); //prompt got pay rate entry
     double payRate = scan.nextDouble();
 
-    double grossPay = (hours * payRate);
+    double grossPay; //declare variable outside of curly braces to access later
 
-    System.out.println("Hey " + name + ", you only made $" + grossPay + " in gross pay this year. Yikes.");
+    if (hours > 40) {
+            double regularPay = payRate * 40;
+            double overtimePay = (hours - 40) * (payRate * 1.5);
+            grossPay = (regularPay + overtimePay); }
+    else {
+            grossPay = hours * payRate;}
 
-
+    System.out.println("Hey " + name + ", you only made $" + String.format("%.2f", grossPay) + " in gross pay this year. Yikes.");
     }
 }
 
